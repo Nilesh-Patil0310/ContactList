@@ -1,0 +1,15 @@
+{
+  "name": "contactlist",
+  "version": "1.0.0",
+  "description": "My second contactList App to learn the Exress js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nilesh Patil",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}

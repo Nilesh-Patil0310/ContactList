@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/9b843f0f11.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/CSS/home.css">
+    </head>
+    <body>
+        <h1 id="page-heading">
+            <i class="fas fa-address-book"></i>
+            My Contact List</h1>
+        <div id="contact-list-container">
+            <ul>
+                <% for(let i of contact_list) {%>
+
+                    <li class="contact">
+                        <div class="details">
+                            <p><%= i.name %></p>
+                            <p><%= i.phone %></p>
+                        </div>
+                       <div class="delete-button">
+                           <a href="/delete-contact/?phone=<%= i.phone %>&name=<%= i.name %>"
+                            <i class="fas fa-window-close"></i>
+                           </a>
+                       </div>
+                    </li>
+                <%}%>
+<br><br>
+                <form id="form" action="/create-contact" method="post">
+                    <input type="text" name="name" placeholder="Enter the name" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" name="phone" placeholder="Enter the number" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="submit">Add Contact</button>
+                </form>
+            </ul>
+        </div>
+        <script type="text/javascript" src="home.js"></script>
+    </body>
+</html>
